@@ -1,0 +1,65 @@
+/* Ocultar todas las secciones inicialmente */
+section {
+    display: none;
+}
+
+/* Mostrar solo la sección activa */
+section.active {
+    display: block;
+}
+
+/* Ajuste para evitar que el contenido quede oculto detrás del navbar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+main {
+    margin-top: 80px; /* Espacio para el navbar */
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Asegurarse de que html y body ocupen toda la altura */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Contenedor principal con flexbox */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% de la altura de la ventana */
+}
+
+/* Sección principal debe ocupar todo el espacio disponible */
+main {
+    flex-grow: 1;
+}
+
+.card {
+    width: 18rem; /* Fija el ancho de cada tarjeta */
+    height: 24rem; /* Fija el alto de cada tarjeta */
+    overflow: hidden; /* Evita que el contenido se desborde */
+}
+.card-img-top {
+    height: 10rem; /* Ajusta la altura de la imagen */
+    object-fit: cover; /* Escala la imagen para que ocupe el espacio sin distorsionarse */
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que los elementos se distribuyan bien */
+    height: calc(100% - 10rem); /* Altura ajustada al tamaño de la imagen */
+}
